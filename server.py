@@ -7,7 +7,7 @@ app = Flask(__name__)
 @app.route("/ygdl", methods=['GET'])
 def ygdls():
     if request.args.get('search') != None:
-        yzm = request.args.get('recaptcha')
+        '''yzm = request.args.get('recaptcha')
         datas = {
             'secret': "****",
             'response': yzm
@@ -15,7 +15,8 @@ def ygdls():
         k = requests.post(
             "https://recaptcha.net/recaptcha/api/siteverify", data=datas)
         kk = eval(k.text.replace('"', "'").replace(
-            'true', "1").replace('false', "2"))
+            'true', "1").replace('false', "2"))'''
+        kk = {"success": 1}
         if kk["success"] == 1:
             p = yigedinglia(request.args.get('search'))
             try:
@@ -37,7 +38,7 @@ def ygdls():
 @app.route("/fudu", methods=['GET'])
 def fuducy():
     if request.args.get('search') != None:
-        yzm = request.args.get('recaptcha')
+        '''yzm = request.args.get('recaptcha')
         datas = {
             'secret': "****",
             'response': yzm
@@ -45,7 +46,8 @@ def fuducy():
         k = requests.post(
             "https://recaptcha.net/recaptcha/api/siteverify", data=datas)
         kk = eval(k.text.replace('"', "'").replace(
-            'true', "1").replace('false', "2"))
+            'true', "1").replace('false', "2"))'''
+        kk = {"success": 1}
         if kk["success"] == 1:
             p = cyfd(request.args.get('search'))
             # print(p)

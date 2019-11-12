@@ -198,55 +198,5 @@ def yigedinglia(text):
 
 
 if __name__ == '__main__':
-    print(yigedinglia("run"))
+    print(yigedinglia("为所欲为"))
     exit()
-    a = []
-    for text in iss:
-        text = text.replace('\n', '')
-        try:
-            lazy_pinyin(text)[3]
-        except:
-            None
-        else:
-            py = lazy_pinyin(text)
-            if py[3] in p5:
-                a.append(py[0])
-    print(set(a))
-    # pyperclip.copy(str(a))
-    # print(cyfd("huo"))
-    '''a = [0, 0, 0, 0, 0, 0]
-    p = []
-    o = []
-    for text in iss:
-        text = text.replace('\n', '')
-        try:
-            lazy_pinyin(text)[3]
-        except:
-            None
-        else:
-            py = lazy_pinyin(text)[3]
-            if py == lazy_pinyin(text)[0]:
-                # print(text,py)
-                o.append(py+" "+text)
-                a[4] += 1
-            if text == "志在必得":
-                py = "de"
-            elif text == "鬼蜮技俩":
-                py = "liang"
-            if py == 'yi':
-                a[0] += 1
-            elif py in p1:
-                a[1] += 1
-            elif py in p2:
-                a[2] += 1
-            elif py in p3:
-                a[3] += 1
-            else:
-                p.append(text)
-    print("以yi结尾的成语：", a[0])
-    print("两次才能到一个顶俩的成语：", a[1])
-    print("三次才能到一个顶俩的成语：", a[2])
-    print("四次才能到一个顶俩的成语：", a[3])
-    print("永远到不了一个顶俩的成语：", p)
-    pyperclip.copy(str(o))
-    print("复读成语就可以领红包的成语：", a[4])'''
