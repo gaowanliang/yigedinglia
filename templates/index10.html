@@ -1,0 +1,209 @@
+﻿<!DOCTYPE html>
+<html lang="zh" class="no-js">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>理财高手</title>
+    <meta name="description" content="Some inspiration for search UI effects" />
+    <meta name="keywords" content="web design, inspiration, search, ui, effect, javascript, animation" />
+    <script src='//recaptcha.net/recaptcha/api.js?render=*****'></script>
+    <meta name="author" content="Codrops" />
+    <meta http-equiv="Access-Control-Allow-Origin" content="*" />
+    <link rel="shortcut icon" href="../static/img/favicon.ico">
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../static/css/demo.css" />
+    <link rel="stylesheet" type="text/css" href="../static/css/style10.css" />
+    <link rel="stylesheet" href="//cdnjs.loli.net/ajax/libs/mdui/0.4.3/css/mdui.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/zui/1.9.1/css/zui.min.css">
+    <!--[if IE]>
+        <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-145667660-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-145667660-1');
+</script>
+    <script>
+        document.documentElement.className = 'js';
+    </script>
+</head>
+<style>
+    .yh {
+        font-family: "Microsoft YaHei" ! important;
+    }
+    
+    .sbd {
+        margin: 1em 0 0 0;
+        font-size: 1.3em;
+    }
+    
+    .fff {
+        margin: 0.5em 0;
+    }
+    
+    .blur {
+        margin: 1em 0;
+    }
+</style>
+
+<body class="demo-10">
+    <svg class="hidden">
+        <defs>
+            <symbol id="icon-drop" viewBox="0 0 24 24">
+                <title>drop</title>
+                <path d="M12,21c-3.6,0-6.6-3-6.6-6.6C5.4,11,10.8,4,11.4,3.2C11.6,3.1,11.8,3,12,3s0.4,0.1,0.6,0.3c0.6,0.8,6.1,7.8,6.1,11.2C18.6,18.1,15.6,21,12,21zM12,4.8c-1.8,2.4-5.2,7.4-5.2,9.6c0,2.9,2.3,5.2,5.2,5.2s5.2-2.3,5.2-5.2C17.2,12.2,13.8,7.3,12,4.8z" />
+                <path d="M12,18.2c-0.4,0-0.7-0.3-0.7-0.7s0.3-0.7,0.7-0.7c1.3,0,2.4-1.1,2.4-2.4c0-0.4,0.3-0.7,0.7-0.7c0.4,0,0.7,0.3,0.7,0.7C15.8,16.5,14.1,18.2,12,18.2z" />
+            </symbol>
+            <symbol id="icon-search" viewBox="0 0 24 24">
+                <title>search</title>
+                <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z" />
+            </symbol>
+            <symbol id="icon-cross" viewBox="0 0 24 24">
+                <title>cross</title>
+                <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" />
+            </symbol>
+        </defs>
+    </svg>
+    <div class="page">
+        <div class="page__single page__single--dummy"></div>
+        <div class="page__single page__single--dummy"></div>
+        <div class="page__single page__single--dummy"></div>
+        <div class="page__single page__single--dummy"></div>
+        <main class="main-wrap page__single yh">
+            <header class="codrops-header">
+                <h1 class="codrops-header__title">理财高手——红包成语接龙终结者</h1>
+                <div class="search-wrap">
+                    <button data-clipboard-text="clipboard.js" id="btn-search" class="btn btn--search"><svg class="icon icon--search">
+                            <use xlink:href="#icon-search"></use>
+                        </svg></button>
+                </div>
+            </header>
+            <span class="sbd yh" style="font-size:0.8em">
+                用最少的次数达到"一个顶俩"
+            </span>
+            <div id='control' style="display:none;">{{disa}}</div>
+            <span class="sbd">
+                {{ygdlia}}
+            </span>
+            <div id='idioms' style="width: 80%;">
+                <div class="mdui-container mdui-center mdui-shadow-7 blur">
+                    <ul class="mdui-list mdui-center" mdui-collapse="{accordion: true}">
+                        {% for index in indexs %}
+                        <li class="mdui-collapse-item">
+                            <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+                                <div class="mdui-list-item-content">
+                                    {% for i in bu %} <ruby>
+                                        {% for op in range(cy[index][i]|count) %}
+                                        {{cy[index][i][op]}}<rt>{{py[index][i][op]}}</rt>
+                                        {% endfor %}</ruby> {%- if cy[index][i] !="一个顶俩" -%} -> {%- endif -%}{% endfor %}
+                                </div>
+                                <i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
+                            </div>
+                            <ul class="mdui-collapse-item-body mdui-list mdui-list-dense">
+                                {% for i in bu %}
+                                <li class="mdui-list-item mdui-ripple"><ruby>
+                                        {% for op in range(cy[index][i]|count) %}
+                                        {{cy[index][i][op]}}<rt>{{py[index][i][op]}}</rt>
+                                        {% endfor %}</ruby> {% endfor %}
+                            </ul>
+                        </li>
+                        {% endfor %}
+                </div>
+            </div>
+            <div class="panel panel-danger" style="width: 80%;" id='tips'>
+                <div class="panel-heading">
+                    重大提醒
+                </div>
+                <div class="panel-body" style="color: #000">
+                    腾讯把成语库中“娘要嫁人”给删除了，现在所有niang结尾的成语均无法继续接龙<br>
+                    受影响成语有：金屋娇娘，重生爷娘，半老徐娘
+                </div>
+            </div>
+            <button id="copyy" class="btn" style="display:none;" data-clipboard-text="">123456</button>
+            <div id='ghy'>展开后点击成语可复制</div>
+            <div class="bottom-nav">
+                <nav class="codrops-demos">
+                    <span>作者：高玩梁</span>
+                    <a class="current-demo" href="ygdl">1</a>
+                    <a href="fudu">2</a>
+                </nav>
+            </div>
+        </main>
+        <div class="search yh">
+            <button id="btn-search-close" class="btn btn--search-close" aria-label="Close search form"><svg class="icon icon--cross">
+                    <use xlink:href="#icon-cross"></use>
+                </svg></button>
+            <form class="search__form" action="">
+                <input name="recaptcha" id="recaptcha" type="text" style="display:none;" />
+                <input class="search__input" id="search" name="search" type="search" placeholder="请输入..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" required />
+                <span class="search__info yh">请输入一个成语或结尾拼音,按回车键理财或按ESC键关闭</span>
+                <button type="submit" id="searchbutton" style="display:none;"></button>
+            </form>
+        </div>
+    </div>
+    <script src="../static/js/demo10.js"></script>
+    <script src="//cdnjs.loli.net/ajax/libs/mdui/0.4.3/js/mdui.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/zui/1.9.1/js/zui.min.js"></script>
+    <script src="https://cdn.bootcss.com/clipboard.js/2.0.1/clipboard.js"></script>
+    <script>
+    grecaptcha.ready(function() {
+        grecaptcha.execute('*****', {
+            action: 'homepage'
+        }).then(function(token) {
+            x = document.getElementById("recaptcha");
+            x.value = token;
+        });
+    });
+
+    function getQueryVariable(variable) {
+        var query = window.location.search.substring(1);
+        var vars = query.split("&");
+        for (var i = 0; i < vars.length; i++) {
+            var pair = vars[i].split("=");
+            if (pair[0] == variable) {
+                return pair[1];
+            }
+        }
+        return (false);
+    }
+    if (getQueryVariable('search') != false) {
+        document.getElementById("tips").style.display = "none";
+        $('title').html('理财高手——' +
+            decodeURIComponent(getQueryVariable('search')) + "的搜索结果")
+    }
+    if ($("#control")[0].innerText == "456") {
+        document.getElementById("idioms").style.display = "none";
+        document.getElementById("ghy").style.display = "none";
+    }
+    var clipboard = new ClipboardJS('#copyy');
+    clipboard.on('success', function(e) {
+        new $.zui.Messager("复制成功", {
+            type: 'success'
+        }).show();
+    });
+    clipboard.on('error', function(e) {
+        new $.zui.Messager("复制失败，用其他浏览器试试？", {
+            type: 'warning'
+        }).show();
+    });
+    $('li').click(function(i) {
+        if (i.currentTarget.className == "mdui-list-item mdui-ripple") {
+            var name = i.currentTarget.innerText,
+                reg = /[\u4e00-\u9fa5]/g,
+                names = name.match(reg)
+            name = names.join("");
+            $('#copyy')[0].dataset.clipboardText = name
+            $('#copyy').click()
+        }
+    });
+    </script>
+</body>
+
+</html>
