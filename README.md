@@ -1,7 +1,9 @@
 # yigedinglia —— 理财高手
 基于Python的成语接龙程序，可以自动接到一个顶俩
 ![image.png](https://i.loli.net/2019/11/12/FVsR4bwW8reCZz5.png)
+
 附加功能：自动接到可复读成语
+
 ![image.png](https://i.loli.net/2019/11/12/JLcdeqm4SPDso5N.png)
 
 ## 产生原因
